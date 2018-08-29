@@ -1,5 +1,5 @@
 [![Runbot Status](https://runbot.odoo-community.org/runbot/badge/flat/263/11.0.svg)](https://runbot.odoo-community.org/runbot/repo/github-com-oca-data-protection-263)
-[![Build Status](https://travis-ci.org/OCA/data-protection.svg?branch=11.0)](https://travis-ci.org/OCA/data-protection)
+[![Build Status](https://travis-ci.org/OCA/data-protection.svg?branch=8.0)](https://travis-ci.org/OCA/data-protection)
 
 # Data Protection
 
@@ -11,8 +11,8 @@ Available addons
 ----------------
 addon | version | summary
 --- | --- | ---
-[privacy](privacy/) | 9.0.1.0.0 | Provides data privacy and protection features to comply to regulations, such as GDPR.
-[privacy_partner_report](privacy_partner_report/) | 9.0.1.0.0 | Show the transactions that a specific partner is involved in.
+[privacy](privacy/) | 8.0.1.0.0 | Provides data privacy and protection features to comply to regulations, such as GDPR.
+[privacy_partner_report](privacy_partner_report/) | 8.0.1.0.0 | Show the transactions that a specific partner is involved in.
 
 [//]: # (end addons)
 
