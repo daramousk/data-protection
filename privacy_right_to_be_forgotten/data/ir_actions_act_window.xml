@@ -9,7 +9,7 @@
             view_id="res_partner_gdpr_form"
             target="new"
             context="{'default_partner_ids': active_ids}"
-            multi="True"
+            multi="False"
             key2="client_action_multi" />
 
     </data>
