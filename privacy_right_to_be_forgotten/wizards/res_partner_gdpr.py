@@ -63,6 +63,38 @@ class ResPartnerGdpr(models.TransientModel):
             else:
                 vals.update({field.name: self._get_remove_text()})
         self.partner_ids.write(vals)
+        self.partner_ids.invoice_ids.write({
+            'invoice_partner_street': False,
+            'invoice_partner_street2': False,
+            'invoice_partner_city': False,
+            'invoice_partner_state_id': False,
+            'invoice_partner_zip': False,
+            })
+        self.env['sale.order'].search([
+            ('partner_id', 'in', self.partner_ids.ids)]).write({
+                'legal_partner_street': False,
+                'legal_partner_street2': False,
+                'legal_partner_city': False,
+                'legal_partner_state_id': False,
+                'invoice_partner_street': False,
+                'invoice_partner_street2': False,
+                'invoice_partner_city': False,
+                'invoice_partner_state_id': False,
+                'invoice_partner_zip': False,
+                'shipping_partner_street': False,
+                'shipping_partner_street2': False,
+                'shipping_partner_city': False,
+                'shipping_partner_state_id': False,
+                'shipping_partner_zip': False,
+            })
+        self.env['stock.picking'].search([
+            ('partner_id', 'in', self.partner_ids.ids)]).write({
+                'shipping_partner_street': False,
+                'shipping_partner_street2': False,
+                'shipping_partner_city': False,
+                'shipping_partner_state_id': False,
+                'shipping_partner_zip': False,
+                })
 
     @api.multi
     def _post_gdpr_cleanup(self):
