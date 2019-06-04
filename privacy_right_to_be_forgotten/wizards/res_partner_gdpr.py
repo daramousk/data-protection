@@ -70,6 +70,7 @@ class ResPartnerGdpr(models.TransientModel):
             'invoice_partner_state_id': False,
             'invoice_partner_zip': False,
             })
+        self.partner_ids.bank_ids.unlink()
         self.env['sale.order'].search([
             ('partner_id', 'in', self.partner_ids.ids)]).write({
                 'legal_partner_street': False,
